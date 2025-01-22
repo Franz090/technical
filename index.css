@@ -1,0 +1,16 @@
+body {
+    margin: 20px;
+    background-color: #f9f9f9;
+  }
+  .output {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .error {
+    color: red;
+  }
+  .color-box {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+  }
