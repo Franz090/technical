@@ -10,8 +10,16 @@ The Universal Color Translator is a web-based tool that translates color names i
 - Built with HTML, CSS, JavaScript, and Bootstrap.
 
 ## Setup Instructions
-1. Open Visual Studio Code after open the terminal then go to step 2
-2. Clone the repository: repository -url link: https://github.com/Franz090/technical.git
-   ```bash
-   git clone <repository-url>
+1. Open Visual Studio Code.
+2. Open the terminal and clone the repository:
+  - git clone https://github.com/Franz090/technical.git
+
+3. Navigate to the project folder:
+  - cd technical
+4. Open the index.html file in your browser or use a live server:
+If using the Live Server extension in Visual Studio Code:
+Right-click on index.html.
+Select "Open with Live Server".
+If not using Live Server, open index.html directly in a web browser by double-clicking it.
+
    
