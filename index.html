@@ -47,7 +47,7 @@
       document.body.removeChild(tempDiv);
 
       if (color === "rgba(0, 0, 0, 0)" || color === "") {
-        output.innerHTML = `<span class='error'>Error: Color <strong>${input}</strong> not recognized.</span>`;
+        output.innerHTML = `<span class='error'>Error: Color <strong>${input}</strong> is not color.</span>`;
       } else {
         const hexColor = rgbToHex(color);
         output.innerHTML = `<span class='success' style='color:${hexColor}'>Hex code for <strong>${input}</strong> is <strong>${hexColor}</strong>.</span>`;
