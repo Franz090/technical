@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Color Translator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .output {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Universal Color Translator</h1>
+  <p>Enter a color name to get its hexadecimal code:</p>
+  <input type="text" id="colorInput" placeholder="e.g., red, blue, green">
+  <button onclick="translateColor()">Translate</button>
+  <div id="output" class="output"></div>
+
+  <script>
+    // Predefined list of colors and their hexadecimal codes
+    const colorHexCodes = {
+      red: "#FF0000",
+      blue: "#0000FF",
+      green: "#008000",
+      yellow: "#FFFF00",
+      black: "#000000",
+      white: "#FFFFFF",
+      orange: "#FFA500",
+      purple: "#800080",
+      pink: "#FFC0CB",
+      gray: "#808080",
+    };
+
+    /**
+     * Function to translate color name to hexadecimal code
+     */
+    function translateColor() {
+      const colorInput = document.getElementById("colorInput").value.trim();
+      const outputDiv = document.getElementById("output");
+
+      if (colorInput === "") {
+        outputDiv.innerHTML = "<span class='error'>Please enter a color name.</span>";
+        return;
+      }
+
+      const normalizedColor = colorInput.toLowerCase();
+      if (colorHexCodes.hasOwnProperty(normalizedColor)) {
+        outputDiv.innerHTML = `<span class='success'>The hex code for <strong>${colorInput}</strong> is <strong>${colorHexCodes[normalizedColor]}</strong>.</span>`;
+      } else {
+        outputDiv.innerHTML = `<span class='error'>Error: Color <strong>${colorInput}</strong> not found in the predefined list.</span>`;
+      }
+    }
+  </script>
+</body>
+</html>
