@@ -1,28 +1,30 @@
-const colorMapping = {
-    "red": "#FF0000",
-    "green": "#00FF00",
-    "blue": "#0000FF",
-    "yellow": "#FFFF00",
-    "black": "#000000",
-    "white": "#FFFFFF",
-    "pink": "#FFC0CB",
-    "purple": "#800080",
-    "orange": "#FFA500",
-    "brown": "#A52A2A"
-  };
+document.getElementById('colorForm').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  function translateColor() {
-    const input = document.getElementById("colorInput").value.trim().toLowerCase();
-    const output = document.getElementById("output");
-    const colorBox = document.getElementById("colorBox");
+    // Predefined colors and their hexadecimal values
+    const colorHexMap = {
+        red: "#FF0000",
+        blue: "#0000FF",
+        green: "#008000"
+    };
 
-    // Check if the color exists in the mapping
-    if (colorMapping[input]) {
-      const hexCode = colorMapping[input];
-      output.innerHTML = `The hex code for "${input}" is ${hexCode}.`;
-      colorBox.style.backgroundColor = hexCode;
+    const colorInput = document.getElementById('colorInput').value.trim().toLowerCase();
+
+    // Validate the input color
+    if (colorHexMap[colorInput]) {
+        Swal.fire({
+            title: `Color: ${colorInput}`,
+            text: `Hex Code: ${colorHexMap[colorInput]}`,
+            icon: 'success',
+            background: colorHexMap[colorInput],
+            color: '#FFF',
+            confirmButtonText: 'OK',
+        });
     } else {
-      output.innerHTML = `<span class="error">Sorry, the color "${input}" is not recognized.</span>`;
-      colorBox.style.backgroundColor = "transparent";
+        Swal.fire({
+            title: 'Invalid Color!',
+            text: 'Please enter a valid color name (e.g., red, blue, green).',
+            icon: 'error',
+        });
     }
-  }
+});
