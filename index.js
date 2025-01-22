@@ -1,7 +1,7 @@
 document.getElementById('colorForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Predefined colors and their hexadecimal values
+
     const colorHexMap = {
         red: "#FF0000",
         blue: "#0000FF",
@@ -10,7 +10,7 @@ document.getElementById('colorForm').addEventListener('submit', function (e) {
 
     const colorInput = document.getElementById('colorInput').value.trim().toLowerCase();
 
-    // Validate the input color
+  
     if (colorHexMap[colorInput]) {
         Swal.fire({
             title: `Color: ${colorInput}`,
